@@ -1,0 +1,25 @@
+{ 
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+          "targets": {
+            "esmodules": true,
+          }
+      }
+    ]
+  ],
+  "plugins": [
+    "@babel/transform-runtime",
+    "@babel/plugin-proposal-optional-chaining",
+    [
+      "module-resolver", {
+        "root": ["."],
+        "alias": {
+          "dataSources": "./src/dataSources/",
+          "utils": "./src/utils/",
+        },
+        "cwd": "babelrc"
+    }]
+  ]
+}
