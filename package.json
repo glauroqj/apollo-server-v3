@@ -1,0 +1,9 @@
+{
+  "name": "apollo-server-v3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/glauroqj/apollo-server-v3.git",
+  "author": "Glauro Q. Juliani",
+  "license": "MIT",
+  "private": false
+}
