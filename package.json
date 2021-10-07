@@ -6,8 +6,16 @@
   "author": "Glauro Q. Juliani",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "----- DOCKER DEVELOPER -----": "",
+    "dev-start": "docker-compose up -d --build && docker ps && yarn dev-logs",
+    "dev-stop": "docker-compose stop && docker ps",
+    "dev-restart": "yarn dev-stop && yarn dev-start",
+    "dev-logs": "docker logs -f --tail 30 apollo_server_v3_local"
+  },
   "dependencies": {
     "apollo-server": "^3.3.0",
+    "apollo-server-core": "^3.3.0",
     "apollo-server-express": "^3.3.0",
     "express": "^4.17.1",
     "graphql": "^15.6.1"
