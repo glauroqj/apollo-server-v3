@@ -1,0 +1,36 @@
+version: "3.8"
+services:
+  apollo_server_v3_local:
+    container_name: apollo_server_v3_local
+    privileged: true
+    working_dir: /app
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    depends_on:
+      - apollo_server_v3_local_redis
+    links:
+      - apollo_server_v3_local_redis
+    volumes:
+      - ./:/app
+    env_file:
+      - ./.env
+    ports:
+      - "4001:4001"
+
+  apollo_server_v3_local_redis:
+    container_name: apollo_server_v3_local_redis
+    image: redis:6.0.6-alpine
+    ports:
+      - "6379:6379"
+    links:
+      - apollo_server_v3_local_redis-commander
+
+  apollo_server_v3_local_redis-commander:
+    container_name: apollo_server_v3_local_redis-commander
+    image: rediscommander/redis-commander:latest
+    restart: always
+    ports:
+      - "3009:8081"
+    environment:
+      - REDIS_HOSTS=apollo_server_v3_local_redis
