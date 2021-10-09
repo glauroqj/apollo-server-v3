@@ -1,4 +1,4 @@
-export default () => {
+export default (responseError) => {
   const Events = async (parent, { id }, { dataSources }, info) => {
     const { eventAPI } = dataSources
     // info.cacheControl.setCacheHint({ maxAge: 0, scope: 'PUBLIC' })

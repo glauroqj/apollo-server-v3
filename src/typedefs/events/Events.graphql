@@ -1,0 +1,48 @@
+type Events {
+  data: [EventsData]
+}
+type EventsByID {
+  data: EventsData
+}
+
+type EventsData {
+  id: Int
+  start_date: String
+  end_date: String
+  name: String
+  detail: String
+  private_event: Boolean
+  published: Boolean
+  cancelled: Boolean
+  image: String
+  url: String
+  address: EventsDataAddress
+  host: EventsDataHost
+  pagination: EventsDataPagination
+}
+
+type EventsDataAddress {
+  name: String
+  address: String
+  address_num: String
+  address_alt: String
+  neighborhood: String
+  city: String
+  state: String
+  zip_code: String
+  country: String
+}
+
+type EventsDataHost {
+  name: String
+  description: String
+}
+
+type EventsDataPagination {
+  has_next: Boolean
+  has_prev: Boolean
+  quantity: Int
+  page: Int
+  page_size: Int
+  total_page: Int
+}

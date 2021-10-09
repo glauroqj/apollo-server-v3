@@ -5,9 +5,9 @@ import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core'
 import {
   typedefs,
   resolvers
-} from './schema/schema'
+} from 'schema/index.js'
 /** data sources */
-import EventAPI from 'datasources/events/eventsDS'
+import EventAPI from 'datasources/events/eventsDS.js'
 
 require('dotenv').config()
 
@@ -15,7 +15,7 @@ const startApolloServer = async () => {
   const app = express()
   const httpServer = http.createServer(app)
   const server = new ApolloServer({
-    typedefs,
+    typeDefs: typedefs,
     resolvers,
     dataSources: () => ({
       eventAPI: new EventAPI()
