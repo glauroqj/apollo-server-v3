@@ -17,6 +17,7 @@
         "root": ["."],
         "alias": {
           "datasources": "./src/datasources/",
+          "typedefs": "./src/typedefs/",
           "utils": "./src/utils/"
         },
         "cwd": "babelrc"
