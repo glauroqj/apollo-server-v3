@@ -2,7 +2,7 @@ type Events {
   data: [EventsData]
 }
 type EventsByID {
-  data: [EventsData]
+  data: EventsData
 }
 
 type EventsData {

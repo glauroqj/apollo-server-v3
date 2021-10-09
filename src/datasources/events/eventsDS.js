@@ -8,7 +8,6 @@ class EventsDS extends RESTDataSource {
 
   /** middleware */
   willSendRequest(request) {
-    console.log('< EVENT DS > ', this.context)
     request.headers.set('Authorization', this.context.fullHeaders['authorization'])
     /** set new headers */
     request.headers.set('s_token', this.context.fullHeaders['authorization'])
@@ -19,6 +18,7 @@ class EventsDS extends RESTDataSource {
   }
 
   async eventsByID(id) {
+    console.log('< EVENTS BY ID > ', id)
     return this.get(`/public/v3/events/${id}`)
   }
 }

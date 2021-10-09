@@ -7,7 +7,7 @@ const graphqlTypeDefs = gql`
   # LOOK TO QUERIES FILES
   type Query {
     Events: Events,
-    EventsByID(id: ID): EventsByID
+    EventsByID(id: ID!): EventsByID
   }
 `
 
