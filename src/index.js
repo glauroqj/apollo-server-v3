@@ -1,13 +1,30 @@
+import http from 'http'
 import express from 'express'
 import { ApolloServer } from 'apollo-server-express'
 import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core'
+import {
+  typedefs,
+  resolvers
+} from './schema/schema'
+/** data sources */
+import EventAPI from 'datasources/events/eventsDS'
+
+require('dotenv').config()
 
 const startApolloServer = async () => {
   const app = express()
   const httpServer = http.createServer(app)
   const server = new ApolloServer({
-    typeDefs,
+    typedefs,
     resolvers,
+    dataSources: () => ({
+      eventAPI: new EventAPI()
+    }),
+    context: ({req}) => {
+      return {
+        fullHeaders: req.headers 
+      }
+    },
     plugins: [
       ApolloServerPluginDrainHttpServer({ httpServer })
     ]
@@ -24,9 +41,9 @@ const startApolloServer = async () => {
   return { server, app }
 }
 
-
 startApolloServer()
 
 /**
  DOC: https://www.apollographql.com/docs/apollo-server/api/apollo-server/
+ APIS: https://developers.sympla.com.br/api-doc/index.html
 */

@@ -9,5 +9,4 @@ RUN npm install --unsafe-perm --force -g yarn && \
 
 ENTRYPOINT rm -rf node_modules && \
   yarn && \
-  yarn build && \
   yarn dev

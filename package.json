@@ -7,6 +7,9 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "build": "NODE_ENV=production rollup -c",
+    "prod": "yarn build && node dist/bundle.js",
+    "dev": "rollup -c -w",
     "----- DOCKER DEVELOPER -----": "",
     "dev-start": "docker-compose up -d --build && docker ps && yarn dev-logs",
     "dev-stop": "docker-compose stop && docker ps",
@@ -14,9 +17,11 @@
     "dev-logs": "docker logs -f --tail 30 apollo_server_v3_local"
   },
   "dependencies": {
+    "apollo-datasource-rest": "^3.2.0",
     "apollo-server": "^3.3.0",
     "apollo-server-core": "^3.3.0",
     "apollo-server-express": "^3.3.0",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "graphql": "^15.6.1"
   },
@@ -26,6 +31,10 @@
     "@babel/plugin-proposal-optional-chaining": "^7.14.5",
     "@babel/plugin-transform-runtime": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
-    "babel-plugin-module-resolver": "^4.1.0"
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-run": "^2.1.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "rollup": "^2.58.0",
+    "rollup-plugin-graphql-tag": "^0.1.0"
   }
 }
