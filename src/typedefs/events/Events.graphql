@@ -18,6 +18,7 @@ type EventsData {
   url: String
   address: EventsDataAddress
   host: EventsDataHost
+  pagination: EventsDataPagination
 }
 
 type EventsDataAddress {
@@ -35,4 +36,13 @@ type EventsDataAddress {
 type EventsDataHost {
   name: String
   description: String
+}
+
+type EventsDataPagination {
+  has_next: Boolean
+  has_prev: Boolean
+  quantity: Int
+  page: Int
+  page_size: Int
+  total_page: Int
 }
