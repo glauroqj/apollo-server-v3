@@ -3,32 +3,33 @@ type Events {
 }
 
 type EventsData {
-  id: Int,
-  start_date: String,
-  end_date: String,
-  name: String,
-  detail: String,
-  private_event: Bool,
-  published: Bool,
-  cancelled: Bool,
-  image: String,
-  url: String,
+  id: Int
+  start_date: String
+  end_date: String
+  name: String
+  detail: String
+  private_event: Bool
+  published: Bool
+  cancelled: Bool
+  image: String
+  url: String
   address: EventsDataAddress
   host: EventsDataHost
 }
 
 type EventsDataAddress {
-  name
-  address
-  address_num
-  address_alt
-  neighborhood
-  city
-  state
-  zip_code
-  country
+  name: String
+  address: String
+  address_num: String
+  address_alt: String
+  neighborhood: String
+  city: String
+  state: String
+  zip_code: String
+  country: String
 }
 
 type EventsDataHost {
-
+  name: String
+  description: String
 }
