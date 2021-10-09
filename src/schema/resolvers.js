@@ -1,7 +1,7 @@
 import { ApolloError } from 'apollo-server-express'
 
 /** queries */
-import EventQuery from 'datasources/events/eventQuery'
+import EventQuery from 'datasources/events/eventQuery.js'
 
 const responseError = error => {
   const { message, extensions } = error
