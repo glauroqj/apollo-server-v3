@@ -4,12 +4,6 @@ class EventsDS extends RESTDataSource {
   constructor() {
     super()
     this.baseURL = 'https://sympla.com.br'
-    this.HTTP = {
-      GET: 'get',
-      POST: 'post',
-      PUT: 'put',
-      DELETE: 'delete'
-    }
   }
 
   /** middleware */
@@ -21,8 +15,8 @@ class EventsDS extends RESTDataSource {
     return this.get('/public/v3/events')
   }
 
-  async eventsByID() {
-    return this.get('/public/v3/events/{event_id}')
+  async eventsByID(id) {
+    return this.get(`/public/v3/events/${id}`)
   }
 }
 
