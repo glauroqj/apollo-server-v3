@@ -1,6 +1,9 @@
 type Events {
   data: [EventsData]
 }
+type EventsByID {
+  data: [EventsData]
+}
 
 type EventsData {
   id: Int
@@ -8,9 +11,9 @@ type EventsData {
   end_date: String
   name: String
   detail: String
-  private_event: Bool
-  published: Bool
-  cancelled: Bool
+  private_event: Boolean
+  published: Boolean
+  cancelled: Boolean
   image: String
   url: String
   address: EventsDataAddress

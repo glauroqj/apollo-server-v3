@@ -20,7 +20,7 @@ const resolvers = {
   Query: {
     ...EventQuery(responseError)
   },
-  Mutation: {}
+  // Mutation: {}
 }
 
 export default resolvers
