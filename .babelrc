@@ -16,7 +16,7 @@
       "module-resolver", {
         "root": ["."],
         "alias": {
-          "dataSources": "./src/dataSources/",
+          "datasources": "./src/datasources/",
           "utils": "./src/utils/"
         },
         "cwd": "babelrc"
