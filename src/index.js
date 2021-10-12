@@ -8,6 +8,8 @@ import {
 } from 'schema/index.js'
 /** data sources */
 import EventAPI from 'datasources/events/eventsDS.js'
+/** utils */
+import Logger from 'utils/Logger.js'
 
 require('dotenv').config()
 
@@ -26,6 +28,7 @@ const startApolloServer = async () => {
       }
     },
     plugins: [
+      Logger,
       ApolloServerPluginDrainHttpServer({ httpServer })
     ]
   })
