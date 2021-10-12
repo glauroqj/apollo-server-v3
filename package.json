@@ -1,14 +1,16 @@
 {
   "name": "apollo-server-v3",
   "version": "1.0.0",
-  "main": "./dist/bundle.js",
+  "main": "dist/bundle.js",
   "repository": "https://github.com/glauroqj/apollo-server-v3.git",
   "author": "Glauro Q. Juliani",
   "license": "MIT",
   "private": false,
+  "heroku-run-build-script": true,
   "scripts": {
+    "heroku-prebuild": "yarn install --production=false",
     "build": "NODE_ENV=production rollup -c",
-    "start": "yarn build && node dist/bundle.js",
+    "start": "node ./dist/bundle.js",
     "dev": "rollup -c -w",
     "----- DOCKER DEVELOPER -----": "",
     "dev-start": "docker-compose up -d --build && docker ps && yarn dev-logs",

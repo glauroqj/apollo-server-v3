@@ -18,7 +18,6 @@ class EventsDS extends RESTDataSource {
   }
 
   async eventsByID(id) {
-    console.log('< EVENTS BY ID > ', id)
     return this.get(`/public/v3/events/${id}`)
   }
 }
