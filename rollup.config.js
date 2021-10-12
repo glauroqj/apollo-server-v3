@@ -18,7 +18,8 @@ export default {
       entries:[
         {find: 'datasources', replacement: './src/datasources'},
         {find: 'typedefs', replacement: './src/typedefs'},
-        {find: 'schema', replacement: './src/schema'}
+        {find: 'schema', replacement: './src/schema'},
+        {find: 'utils', replacement: './src/utils'}
       ]
     }),
     // babel({ babelHelpers: 'bundled', babelrc: false })
