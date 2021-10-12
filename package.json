@@ -10,7 +10,7 @@
   "scripts": {
     "heroku-prebuild": "yarn install --production=false",
     "build": "NODE_ENV=production rollup -c",
-    "start": "yarn build && node dist/bundle.js",
+    "start": "yarn build && node ./dist/bundle.js",
     "dev": "rollup -c -w",
     "----- DOCKER DEVELOPER -----": "",
     "dev-start": "docker-compose up -d --build && docker ps && yarn dev-logs",
