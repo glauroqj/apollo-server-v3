@@ -6,7 +6,9 @@
   "author": "Glauro Q. Juliani",
   "license": "MIT",
   "private": false,
+  "heroku-run-build-script": true,
   "scripts": {
+    "heroku-prebuild": "yarn install --production=false",
     "build": "NODE_ENV=production rollup -c",
     "start": "yarn build && node dist/bundle.js",
     "dev": "rollup -c -w",
